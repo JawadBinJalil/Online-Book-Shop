@@ -1,0 +1,31 @@
+.carousel{
+    margin-right: 200px;
+    margin-left: 290px;
+    margin-bottom: 2%;
+    width: 50%;
+    
+}.carimg{
+    height: 270px;
+    width:100%;
+}.cimg{
+    width: 100%;
+}.card{
+    width: 270px;
+    margin-left: 65px;
+    margin-top: 30px;
+}.card img{
+    height: 130px;  
+    width: 270px;
+    position: relative;
+}.headline{
+    text-align: center;
+    background-color: rgb(218, 74, 74);
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 25px;
+}h2{
+    color: blue;
+    font-weight: bold;
+    margin-left: 50px;
+}
+   

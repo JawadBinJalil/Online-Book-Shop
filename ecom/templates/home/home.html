@@ -1,0 +1,106 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+  <!-- Carosel Starts -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for d in discount %}
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner">
+        {% for d in discount %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{d.image_of_offers.url}}" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+{% endblock banner_slider %}
+
+
+{% block main-content %}
+<H1 class="headline">Top selling books of this month</H1>
+  <!-- Grid % Card Starts -->
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <h2>Novel books</h2>
+        <div class="row">
+          {% for n in Novel %}
+          <div class="col-md-4">
+            <div class="card">
+              <img class="cimg" src="/media/{{n.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{n.title}}</h5>
+                <p class="card-text">{{n.prize}}Tk</p>
+                <a href="#" class="btn btn-primary">BUY NOW</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <h2 style="margin-top: 2%;">Poem books</h2>
+        <div class="row">
+          {% for p in Poem %}
+          <div class="col-md-4">
+            <div class="card">
+              <img class="cimg" src="/media/{{p.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{p.title}}</h5>
+                <p class="card-text">{{p.prize}}Tk</p>
+                <a href="#" class="btn btn-primary">BUY NOW</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <h2 style="margin-top: 2%;">Story books</h2>
+        <div class="row">
+          {% for s in Story %}
+          <div class="col-md-4">
+            <div class="card">
+              <img class="cimg" src="/media/{{s.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{s.title}}</h5>
+                <p class="card-text">{{s.prize}}Tk</p>
+                <a href="#" class="btn btn-primary">BUY NOW</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Grid % Card ends -->
+    </div>
+</div>
+<!-- End 2nd Product Slider -->
+
+<!-- End 3rd Product Slider -->
+{% endblock main-content %}
